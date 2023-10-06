@@ -3,7 +3,7 @@
 from .embed import HFEmbeddings
 from .db import Chroma
 
-class Text2Vec:
+class Text2vec:
     def __init__(self, 
                  cache_folder='models',
                  model_kwargs={'device': 'cpu'}):
