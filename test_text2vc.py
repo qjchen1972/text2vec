@@ -1,10 +1,12 @@
 import time   
-from text2vec import init_db
+import text2vec as tv
 import argparse
+
+pq = tv.Text2Vec()
 
 def create_db():
     start = time.time()    
-    db = init_db(name='db_test')
+    db = pq.get_db(name='db_test')
     print( time.time() - start)
     start = time.time()
     texts = ['ok1', 'ok2', 'ok3']
@@ -15,7 +17,7 @@ def create_db():
 
 def query_db():
     start = time.time()    
-    db = init_db(name='db_test')
+    db = pq.get_db(name='db_test')
     print( time.time() - start)
     val = db.similarity_search_with_score('ok1')
     print(val)
